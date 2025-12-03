@@ -27,6 +27,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <div className="navbar bg-primary text-primary-content">
+          <button className="btn btn-ghost text-xl ">Home Upkeep</button>
+        </div>
         {children}
       </body>
     </html>
