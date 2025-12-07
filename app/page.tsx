@@ -1,7 +1,12 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div className="flex flex-col gap-6 items-center p-8">
-      <button className="btn btn-primary btn-square w-36 h-36 p-6 flex flex-col">
+      <Link
+        href={"/blog"}
+        className="btn btn-primary btn-square w-36 h-36 p-6 flex flex-col"
+      >
         <svg id="emoji" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
           <g id="color">
             <path
@@ -18,7 +23,7 @@ export default function Home() {
               fill="#9B9B9A"
               stroke="none"
               strokeLinecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
               stroke-miterlimit="10"
               stroke-width="2"
               d="M59,56h2.3957C63.0526,56,64,54.9933,64,53.3365v-0.3782v-42H14"
@@ -31,7 +36,7 @@ export default function Home() {
               fill="#D0CFCE"
               stroke="none"
               strokeLinecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
               stroke-miterlimit="10"
               stroke-width="2"
             />
@@ -44,7 +49,7 @@ export default function Home() {
               fill="none"
               stroke="#000000"
               strokeLinecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
               stroke-miterlimit="10"
               stroke-width="2"
               d="M59,56h2.3957C63.0526,56,64,54.9933,64,53.3365v-0.3782v-42H14"
@@ -57,7 +62,7 @@ export default function Home() {
               fill="none"
               stroke="#000000"
               strokeLinecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
               stroke-miterlimit="10"
               stroke-width="2"
             />
@@ -69,7 +74,7 @@ export default function Home() {
               fill="none"
               stroke="#000000"
               strokeLinecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
               stroke-miterlimit="10"
               stroke-width="2"
             />
@@ -81,7 +86,7 @@ export default function Home() {
               fill="none"
               stroke="#000000"
               strokeLinecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
               stroke-miterlimit="10"
               stroke-width="2"
             />
@@ -93,7 +98,7 @@ export default function Home() {
               fill="none"
               stroke="#000000"
               strokeLinecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
               stroke-miterlimit="10"
               stroke-width="2"
             />
@@ -105,7 +110,7 @@ export default function Home() {
               fill="none"
               stroke="#000000"
               strokeLinecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
               stroke-miterlimit="10"
               stroke-width="2"
             />
@@ -117,7 +122,7 @@ export default function Home() {
               fill="none"
               stroke="#000000"
               strokeLinecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
               stroke-miterlimit="10"
               stroke-width="2"
             />
@@ -129,14 +134,14 @@ export default function Home() {
               fill="none"
               stroke="#000000"
               strokeLinecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
               stroke-miterlimit="10"
               stroke-width="2"
             />
           </g>
         </svg>
         Blog
-      </button>
+      </Link>
 
       <button className="btn btn-primary btn-square w-36 h-36 p-6 flex flex-col">
         <svg id="emoji" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
@@ -162,7 +167,7 @@ export default function Home() {
               fill="none"
               stroke="#000"
               strokeLinecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
               stroke-width="2.0001"
             />
             <line
@@ -173,14 +178,14 @@ export default function Home() {
               fill="none"
               stroke="#000"
               strokeLinecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
               stroke-width="2"
             />
             <polyline
               fill="none"
               stroke="#000"
               strokeLinecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
               stroke-width="2"
               points="54.0163 12.1224 60 12.1224 60 28.1224 12 28.1224 12 12.1224 18.0318 12.1224"
             />
@@ -192,7 +197,7 @@ export default function Home() {
               fill="none"
               stroke="#000"
               strokeLinecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
               stroke-width="2"
             />
             <circle
@@ -202,7 +207,7 @@ export default function Home() {
               fill="none"
               stroke="#000"
               strokeLinecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
               stroke-width="2.0001"
             />
             <line
@@ -213,14 +218,14 @@ export default function Home() {
               fill="none"
               stroke="#000"
               strokeLinecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
               stroke-width="2"
             />
             <path
               fill="none"
               stroke="#000"
               strokeLinecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
               stroke-width="2"
               d="m34.3355,38.092c.5248-2.5644,2.7937-4.4936,5.5134-4.4936h0c1.5539,0,2.9609.63,3.9793,1.6484,1.5843,1.5842,1.438,4.2167-.0484,5.8928l-9.5586,10.7799h4.7601"
             />
@@ -228,7 +233,7 @@ export default function Home() {
               fill="none"
               stroke="#000"
               strokeLinecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
               stroke-width="2"
               points="23.2764 37.3982 28.3485 33.5984 28.3485 51.9195"
             />
@@ -236,7 +241,7 @@ export default function Home() {
               fill="none"
               stroke="#000"
               strokeLinecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
               stroke-width="2"
               points="11.997 28.0918 11.997 60.0918 43.6564 60.0864 59.997 48.0382 59.997 28.0918"
             />
@@ -244,7 +249,7 @@ export default function Home() {
               fill="none"
               stroke="#000"
               strokeLinecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
               stroke-width="2"
               points="59.7462 48.0382 43.1384 48.0382 43.1384 53.5175"
             />
@@ -274,7 +279,7 @@ export default function Home() {
               fill="none"
               stroke="#000"
               strokeLinecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
               stroke-width="2"
             />
             <circle
@@ -284,14 +289,14 @@ export default function Home() {
               fill="none"
               stroke="#000"
               strokeLinecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
               stroke-width="2"
             />
             <path
               fill="none"
               stroke="#000"
               strokeLinecap="round"
-              stroke-linejoin="round"
+              strokeLinejoin="round"
               stroke-width="2"
               d="m31.1191,19.6921c-.2389.9895-1.31,1.5799-2.2425,1.1717-.0147-.0065-.0296-.0131-.0445-.0199l-7.1357-4.6903-.73.6834-3.6502,3.417,4.5037,7.484c.7363,1.6239-1.0785,2.0744-1.0785,2.0744l-8.4766,2.1074.1649,4.9973.033.9995,8.3622,1.7291h0c.9521.3641,1.3501,1.4954.8359,2.3754l-.0328.0562-4.5037,7.484,3.6502,3.417.73.6834,7.1357-4.6903c.0149-.0068.03-.0129.0445-.0199,0,0,.0116-.0042.0332-.0112,1.1606-.3768,2.393.3463,2.6794,1.5324l1.7947,7.4336h6l1.8869-7.8157c.2424-1.004,1.3364-1.5418,2.2794-1.1205h0l7.1357,4.6903.73-.6834,3.6502-3.417-4.5037-7.484-.0328-.0562c-.5143-.8801-.1162-2.0113.8359-2.3755h0l8.3622-1.7291.033-.9995.1649-4.9973-8.4766-2.1074s-1.8149-.4505-1.0785-2.0744l4.5037-7.484-3.6502-3.417-.73-.6834-7.1357,4.6903h0c-.943.4212-2.037-.1166-2.2794-1.1206l-1.887-7.8155h-6l-1.8809,7.7857Z"
             />
