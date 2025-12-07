@@ -72,13 +72,13 @@ type ContentRelationshipFieldWithData<
 /**
  * Content for Author documents
  */
-interface AuthorsDocumentData {
+interface AuthorDocumentData {
   /**
    * avatar field in *Author*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: authors.avatar
+   * - **API ID Path**: author.avatar
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/fields/image
    */
@@ -89,7 +89,7 @@ interface AuthorsDocumentData {
    *
    * - **Field Type**: Text
    * - **Placeholder**: Harry Potter
-   * - **API ID Path**: authors.name
+   * - **API ID Path**: author.name
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
@@ -100,7 +100,7 @@ interface AuthorsDocumentData {
    *
    * - **Field Type**: Text
    * - **Placeholder**: design / coding
-   * - **API ID Path**: authors.expertise
+   * - **API ID Path**: author.expertise
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
@@ -111,7 +111,7 @@ interface AuthorsDocumentData {
    *
    * - **Field Type**: Text
    * - **Placeholder**: rented semi-detatched house
-   * - **API ID Path**: authors.home_situation
+   * - **API ID Path**: author.home_situation
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
@@ -121,18 +121,36 @@ interface AuthorsDocumentData {
 /**
  * Author document from Prismic
  *
- * - **API ID**: `authors`
+ * - **API ID**: `author`
  * - **Repeatable**: `true`
  * - **Documentation**: https://prismic.io/docs/content-modeling
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type AuthorsDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithUID<
-    Simplify<AuthorsDocumentData>,
-    "authors",
-    Lang
+export type AuthorDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<AuthorDocumentData>, "author", Lang>;
+
+/**
+ * Item in *blog → authors*
+ */
+export interface BlogDocumentDataAuthorsItem {
+  /**
+   * author field in *blog → authors*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.authors[].author
+   * - **Documentation**: https://prismic.io/docs/fields/content-relationship
+   */
+  author: ContentRelationshipFieldWithData<
+    [
+      {
+        id: "author";
+        fields: ["avatar", "name", "expertise", "home_situation"];
+      },
+    ]
   >;
+}
 
 type BlogDocumentDataSlicesSlice = never;
 
@@ -150,6 +168,28 @@ interface BlogDocumentData {
    * - **Documentation**: https://prismic.io/docs/fields/text
    */
   blogTitle: prismic.KeyTextField;
+
+  /**
+   * description field in *blog*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: What this blog is about
+   * - **API ID Path**: blog.description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/text
+   */
+  description: prismic.KeyTextField;
+
+  /**
+   * authors field in *blog*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.authors[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/fields/repeatable-group
+   */
+  authors: prismic.GroupField<Simplify<BlogDocumentDataAuthorsItem>>;
 
   /**
    * Slice Zone field in *blog*
@@ -206,7 +246,7 @@ interface BlogDocumentData {
 export type BlogDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<Simplify<BlogDocumentData>, "blog", Lang>;
 
-export type AllDocumentTypes = AuthorsDocument | BlogDocument;
+export type AllDocumentTypes = AuthorDocument | BlogDocument;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -229,10 +269,11 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
-      AuthorsDocument,
-      AuthorsDocumentData,
+      AuthorDocument,
+      AuthorDocumentData,
       BlogDocument,
       BlogDocumentData,
+      BlogDocumentDataAuthorsItem,
       BlogDocumentDataSlicesSlice,
       AllDocumentTypes,
     };

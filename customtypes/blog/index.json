@@ -13,6 +13,36 @@
           "placeholder": "Work In Progress"
         }
       },
+      "description": {
+        "type": "Text",
+        "config": {
+          "label": "description",
+          "placeholder": "What this blog is about"
+        }
+      },
+      "authors": {
+        "type": "Group",
+        "config": {
+          "label": "authors",
+          "repeat": true,
+          "fields": {
+            "author": {
+              "type": "Link",
+              "config": {
+                "label": "author",
+                "select": "document",
+                "repeat": false,
+                "customtypes": [
+                  {
+                    "id": "author",
+                    "fields": ["avatar", "name", "expertise", "home_situation"]
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

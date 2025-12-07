@@ -1,6 +1,6 @@
 {
   "format": "custom",
-  "id": "authors",
+  "id": "author",
   "label": "Author",
   "repeatable": true,
   "status": true,
