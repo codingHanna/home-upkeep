@@ -1,0 +1,46 @@
+{
+  "format": "custom",
+  "id": "authors",
+  "label": "Author",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID"
+        }
+      },
+      "avatar": {
+        "type": "Image",
+        "config": {
+          "label": "avatar",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "name": {
+        "type": "Text",
+        "config": {
+          "label": "name",
+          "placeholder": "Harry Potter"
+        }
+      },
+      "expertise": {
+        "type": "Text",
+        "config": {
+          "label": "expertise",
+          "placeholder": "design / coding"
+        }
+      },
+      "home_situation": {
+        "type": "Text",
+        "config": {
+          "label": "home situation",
+          "placeholder": "rented semi-detatched house"
+        }
+      }
+    }
+  }
+}
